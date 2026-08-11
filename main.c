@@ -147,7 +147,7 @@ void remover(){
         fclose(inventario);
         
         //imprimir se o item foi removido
-        if (resul == -1) printf("Item removido com sucesso!\n");
+        if (resul == -1) printf("Item removido do estoque!\n");
         
         //imprimir se a quantidade foi atualizada
         else printf("Quantidade atualizada com sucesso!\n");
