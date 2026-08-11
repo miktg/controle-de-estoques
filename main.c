@@ -57,10 +57,10 @@ int iniciar(){
     while(valida == false){
 
         printf("Opção: ");
-  
-        fgets(entrada_aux, sizeof(entrada_aux), stdin);
         
-        entrada_aux[strcspn(entrada_aux, "\n")] = '\0';
+        if (fgets(entrada_aux, sizeof(entrada_aux), stdin) != NULL) {
+            entrada_aux[strcspn(entrada_aux, "\n")] = '\0';
+        }
         
         if (sscanf(entrada_aux, "%d", &entrada) == 0) printf("Opção inválida! Tente Novamente.\n");
         
