@@ -43,24 +43,24 @@ int remover_quantidade(char nomes[][50], int quantidades[], int *count, const ch
 }
 
 //Impressao do menu inicial e leitura da entrada
-char iniciar(){
+int iniciar(){
 
     printf("==================================\nControle de Estoque\n==================================\n"); //titulo
     printf("1. Adicionar Item\n2. Remover Item\n3. Listar Estoque\n4. Sair\n"); //opcoes
 
     bool valida = false; //variavel para validar a entrada
 
-    char entrada[50];
+    int entrada;
 
     //loop para leitura da entrada
     while(valida == false){
   
-        scanf(" %s", &entrada);
+        scanf(" %d", &entrada);
 
         char c;
         while ((c = getchar()) != '\n' && c != EOF);
 
-        if(entrada == "1" || entrada == "2" || entrada == "3" || entrada == "4"){
+        if(entrada == 1 || entrada == 2 || entrada == 3 || entrada == 4){
             valida = true;
         }
         else{
@@ -199,13 +199,13 @@ void encerrar(){
 int main(){
     
     while(true){
-        char opcao = iniciar();
+        int opcao = iniciar();
         
-        if(opcao == '1') adicionar();
+        if(opcao == 1) adicionar();
     
-        else if (opcao == '2') remover();
+        else if (opcao == 2) remover();
 
-        else if (opcao == '3') listar();
+        else if (opcao == 3) listar();
         
         else{
             encerrar();
