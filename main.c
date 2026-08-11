@@ -57,9 +57,8 @@ int iniciar(){
     while(valida == false){
   
         fgets(entrada_aux, sizeof(entrada_aux), stdin);
-
-        char c;
-        while ((c = getchar()) != '\n' && c != EOF);
+        
+        entrada_aux[strcspn(entrada_aux, "\n")] = '\0';
         
         if (sscanf(entrada_aux, "%d", &entrada) == 0) printf("Opção Inválida! Tente Novamente.\n");
         
