@@ -33,6 +33,9 @@ int remover_quantidade(char nomes[][50], int quantidades[], int *count, const ch
             strcpy(nomes[i], nomes[i + 1]);
             quantidades[i] = quantidades[i + 1];
         }
+
+        (*count)--;
+        
         return -1;
     }
 
@@ -47,17 +50,17 @@ char iniciar(){
 
     bool valida = false; //variavel para validar a entrada
 
-    char entrada;
+    char entrada[50];
 
     //loop para leitura da entrada
     while(valida == false){
   
-        scanf(" %c", &entrada);
+        scanf(" %s", &entrada);
 
         char c;
         while ((c = getchar()) != '\n' && c != EOF);
 
-        if(entrada > 48 && entrada < 53){
+        if(entrada == "1" || entrada == "2" || entrada == "3" || entrada == "4"){
             valida = true;
         }
         else{
