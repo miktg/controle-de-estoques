@@ -55,19 +55,21 @@ int iniciar(){
 
     //loop para leitura da entrada
     while(valida == false){
+
+        printf("Opção: ");
   
         fgets(entrada_aux, sizeof(entrada_aux), stdin);
         
         entrada_aux[strcspn(entrada_aux, "\n")] = '\0';
         
-        if (sscanf(entrada_aux, "%d", &entrada) == 0) printf("Opção Inválida! Tente Novamente.\n");
+        if (sscanf(entrada_aux, "%d", &entrada) == 0) printf("Opção inválida! Tente Novamente.\n");
         
         else{
             if(entrada == 1 || entrada == 2 || entrada == 3 || entrada == 4){
                 valida = true;
             }
             else{
-                printf("Opção Inválida! Tente Novamente.\n");
+                printf("Opção inválida! Tente novamente.\n");
             }
         }
     }
